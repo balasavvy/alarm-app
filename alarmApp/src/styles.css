@@ -1,0 +1,326 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+@import url("assets/css/style.css");
+
+:root {
+  --primeColor: #404040;
+  --primeDarkColor: #00aeef;
+  --carrot: #ee6142;
+  --blue: #0e1833;
+  --grey: #777070;
+  --montserrat: 'Montserrat', sans-serif;
+  --sans: 'Montserrat', sans-serif;
+  --sohoRegular: 'SohoPro-Regular';
+  --white: #fff;
+  --btnBg: #117a8b;
+  --gothamLight: 'Gotham-Light';
+  --gothamBook: 'Gotham-Book';
+  --latoLight: 'latolight';
+  --digital: 'Digital-7'
+}
+
+body {
+  background-image: url('assets/images/bannerbg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+  font-size: 14px;
+  font-family: var(--gothamLight);
+  font-weight: 400;
+  color: #666666;
+  line-height: 2rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+:host {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--btnBg);
+  border-color: var(--btnBg);
+}
+
+.has-success {
+  border-color: #5cb85c !important;
+}
+
+.has-danger {
+  border-color: #d9534f !important;
+}
+
+.has-warning {
+  border-color: #f0ad4e !important;
+}
+
+*:focus {
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid #cccccc;
+}
+
+textarea,
+input {
+  outline: none;
+  border: 1px solid #cccccc;
+}
+
+u {
+  text-decoration-skip-ink: none;
+}
+
+.bg--prime {
+  background-color: var(--primeDarkColor);
+}
+
+.bg--carrot {
+  background-color: var(--carrot) !important;
+}
+
+.f-family-montserrat {
+  font-family: var(--montserrat);
+}
+
+.soho-r {
+  font-family: var(--sohoRegular);
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.text-prime {
+  color: var(--primeColor);
+}
+
+.p20 {
+  padding: 20px
+}
+
+.mt20 {
+  margin-top: 20px
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: var(--btnBg)
+}
+
+.m0 {
+  margin: 0 !important
+}
+
+.p0 {
+  padding: 0 !important
+}
+
+.list-group-item {
+  background-color: transparent;
+  border-top-style: none;
+}
+
+.quotation {
+  font-size: 30px;
+  margin: 0 auto;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+
+.quotation:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 30px;
+  color: #ccc;
+  font-size: 3em;
+}
+
+.quotation::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 35px;
+  color: #ccc;
+  font-size: 3em;
+}
+
+/**widget theming**/
+#clickWidget.dark {
+  background-color: #222;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+#clickWidget.dark .nav-item a {
+  color: rgba(255, 255, 255, 0.6)
+}
+
+#clickWidget.dark .nav-item a.active {
+  color: #222 !important;
+  font-weight: bold
+}
+
+#clickWidget.dark .mat-radio-outer-circle,
+#clickWidget.dark .mat-checkbox-frame {
+  border-color: rgba(247, 243, 243, 0.54)
+}
+
+#clickWidget.dark .alarm-lists {
+  border-color: rgba(247, 243, 243, .4)
+}
+
+#clickWidget.dark .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(0, 188, 140, 0.72);
+}
+
+#clickWidget.dark .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #00bc8c;
+}
+
+#clickWidget.dark .mat-slide-toggle-bar {
+  background-color: rgba(250, 250, 250, 0.58);
+}
+
+#clickWidget.dark .mat-slide-toggle.mat-checked .mat-ripple-element,
+#clickWidget.dark .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #00bc8c;
+}
+
+#clickWidget.dark .modal-content {
+  background-color: #222;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+#clickWidget.dark .btn-primary {
+  color: #fff;
+  background-color: var(--btnBg);
+  border-color: var(--btnBg);
+}
+
+#clickWidget.dark .days_item {
+  background-color: #eee;
+  color: #222;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #333;
+}
+
+#clickWidget.dark .days_item.selected {
+  background: #117a8b;
+  color: #fff;
+}
+
+#clickWidget.dark .settings .list-group-item {
+  border: 1px solid rgba(243, 242, 242, 0.4);
+}
+
+/**/
+#clickWidget.light {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: #222;
+}
+
+#clickWidget.light .nav-item a {
+  color: rgba(0, 0, 0, 0.6)
+}
+
+#clickWidget.light .nav-item a.active {
+  color: #222;
+  font-weight: bold
+}
+
+#clickWidget.light .mat-radio-outer-circle {
+  border-color: rgba(0, 0, 0, .54)
+}
+
+#clickWidget.light .alarm-lists {
+  border-color: rgba(0, 0, 0, .4)
+}
+
+#clickWidget.light .btn-primary {
+  color: #fff;
+  background-color: var(--btnBg);
+  border-color: var(--btnBg);
+}
+
+#clickWidget.light .days_item {
+  background-color: #eee;
+  color: #222;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #333;
+}
+
+#clickWidget.light .days_item.selected {
+  background: #117a8b;
+  color: #fff;
+}
+
+#clickWidget.light .mat-radio-outer-circle,
+#clickWidget.light .mat-checkbox-frame {
+  border-color: rgba(165, 155, 155, 0.54)
+}
+
+#clickWidget.light .alarm-lists {
+  border-color: rgba(88, 78, 78, 0.4)
+}
+
+#clickWidget.light .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(0, 188, 140, 0.72);
+}
+
+#clickWidget.light .mat-slide-toggle-thumb {
+  background-color: #c1bcbc;
+}
+
+#clickWidget.light .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #00bc8c;
+}
+
+#clickWidget.light .mat-slide-toggle-bar {
+  background-color: rgba(193, 188, 188, 0.54);
+}
+
+#clickWidget.light .mat-slide-toggle.mat-checked .mat-ripple-element,
+#clickWidget.light .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #00bc8c;
+}
+
+#clickWidget.dark .settings .list-group-item {
+  border: 1px solid rgba(165, 155, 155, 0.4);
+}

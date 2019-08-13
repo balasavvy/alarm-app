@@ -1,0 +1,32 @@
+.alarm-lists {
+  padding: 10px;
+  border-width: 0px 0px 1px;
+  border-style: dashed;
+  position: relative;
+}
+
+.handle {
+  text-align: right;
+}
+
+.actions {
+  position: absolute;
+  bottom: 13px;
+  right: 11px;
+}
+
+.dTime span {
+  font-size: 27px;
+  font-family: var(--sohoRegular)
+}
+
+.dayRow {
+  font-size: 12px;
+  font-family: var(--sohoRegular)
+}
+
+.actions span {
+  margin-left: 10px;
+  opacity: 0.6;
+  font-size: 17px;
+}

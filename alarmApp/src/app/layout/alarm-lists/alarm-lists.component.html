@@ -1,0 +1,24 @@
+<section class="alarm-lists">
+  <div class="row align-self-center h-100" *ngIf="!_isAlarmLists">
+    <div class="col-12">
+      <div class="no-alarm-lits">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">alarm_off</mat-icon>
+        No Alarms
+      </div>
+    </div>
+  </div>
+  <div class="addAlarm">
+    <div class="alarmClick" (click)="addAlarm()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon>
+    </div>
+  </div>
+</section>
+
+<app-set-alarm (alarmDetail)="renderLists($event)"></app-set-alarm>
+
+<!--alarm lists-->
+
+<ng-container *ngIf="_isAlarmLists">
+  <alarm-cards [alarms]="alarmListings" (_changeStatus)="_changeStatus($event)" (_deleteAlarm)="_deleteAlarm($event)"
+    (_editAlarm)="_editAlarm($event)"></alarm-cards>
+</ng-container>

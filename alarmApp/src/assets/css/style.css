@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'SohoPro-Regular';
+  src: url('../fonts/soho/SohoPro-Regular.eot');
+  src: url('../fonts/soho/SohoPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soho/SohoPro-Regular.woff2') format('woff2'),
+    url('../fonts/soho/SohoPro-Regular.woff') format('woff'),
+    url('../fonts/soho/SohoPro-Regular.ttf') format('truetype'),
+    url('../fonts/soho/SohoPro-Regular.svg#SohoPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SohoPro-Medium';
+  src: url('../fonts/soho/SohoPro-Medium.eot');
+  src: url('../fonts/soho/SohoPro-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soho/SohoPro-Medium.woff2') format('woff2'),
+    url('../fonts/soho/SohoPro-Medium.woff') format('woff'),
+    url('../fonts/soho/SohoPro-Medium.ttf') format('truetype'),
+    url('../fonts/soho/SohoPro-Medium.svg#SohoPro-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SohoPro-Bold';
+  src: url('../fonts/soho/SohoPro-Bold.eot');
+  src: url('../fonts/soho/SohoPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soho/SohoPro-Bold.woff2') format('woff2'),
+    url('../fonts/soho/SohoPro-Bold.woff') format('woff'),
+    url('../fonts/soho/SohoPro-Bold.ttf') format('truetype'),
+    url('../fonts/soho/SohoPro-Bold.svg#SohoPro-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SohoPro-Light';
+  src: url('../fonts/soho/SohoPro-Light.eot');
+  src: url('../fonts/soho/SohoPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/soho/SohoPro-Light.woff2') format('woff2'),
+    url('../fonts/soho/SohoPro-Light.woff') format('woff'),
+    url('../fonts/soho/SohoPro-Light.ttf') format('truetype'),
+    url('../fonts/soho/SohoPro-Light.svg#SohoPro-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/openSans/Regular/OpenSans-Regular.woff2?v=1.101) format("woff2"), url(../fonts/openSans/Regular/OpenSans-Regular.woff?v=1.101) format("woff");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('../fonts/gotham/Gotham-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/gotham/Gotham-Light.otf') format('opentype'),
+    url('../fonts/gotham/Gotham-Light.woff') format('woff'), url('../fonts/gotham/Gotham-Light.ttf') format('truetype'), url('../fonts/gotham/Gotham-Light.svg#Gotham-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('../fonts/gotham/Gotham-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/gotham/Gotham-Book.otf') format('opentype'),
+    url('../fonts/gotham/Gotham-Book.woff') format('woff'), url('../fonts/gotham/Gotham-Book.ttf') format('truetype'), url('../fonts/gotham/Gotham-Book.svg#Gotham-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latolight';
+  src: url('../fonts/lato/lato-light.woff2') format('woff2'),
+    url('../fonts/lato/lato-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url('../fonts/digital/Digital-7.eot?#iefix') format('embedded-opentype'), url('../fonts/digital/Digital-7.woff') format('woff'), url('../fonts/digital/Digital-7.ttf') format('truetype'), url('../fonts/digital/Digital-7.svg#Digital-7') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,29 @@
+.days_item {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  font-size: 11px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer
+}
+
+.title {
+  font-size: 20px;
+  font-family: var(--sohoRegular);
+  text-align: center;
+  text-shadow: 1px 1px 1px #17a2b8;
+  letter-spacing: 4px;
+  border-bottom: 1px solid rgba(123, 120, 120, .5);
+  padding-bottom: 10px;
+}
+
+.buttons button {
+  margin: 0px 5px
+}
+
+.buttons {
+  padding: 0;
+}

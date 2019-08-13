@@ -1,0 +1,40 @@
+<div bsModal #setAlarmModal="bs-modal" [config]="{ keyboard: false,ignoreBackdropClick:true }" class="modal fade"
+  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width:360px">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <h5 class="title">Set Time</h5>
+            <form [formGroup]="alarmForm">
+              <timepicker [formControlName]="'mytime'" [minuteStep]="1" [showMeridian]="ismeridian"></timepicker>
+
+              <mat-checkbox [formControlName]="'repeatModeBox'" [checked]="_checked" (change)="repeatMode($event)">
+                Repeat</mat-checkbox>
+              <ng-container *ngIf="_repeatMode">
+                <div class="days row">
+                  <div class="col">
+                    <ul class="list-inline">
+                      <li class="list-inline-item" *ngFor="let day of Days">
+                        <div class="days_item" [ngClass]="[isClicked[day.value] ? 'selected' : '']"
+                          (click)="addintoRepeatMode(day,$event);">{{day.day_sh}}</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </ng-container>
+            </form>
+          </div>
+        </div>
+        <div class="row mt15 justify-content-center">
+          <div class="col-6 text-center buttons">
+            <button type="button" class="btn  btn-primary " (click)="hideModal()">
+              Cancel
+            </button>
+            <button (click)=onSubmit($event) type="button" class="btn btn-primary">Set</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

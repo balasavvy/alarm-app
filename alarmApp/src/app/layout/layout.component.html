@@ -1,0 +1,31 @@
+<app-header></app-header>
+<section class="Site-content wrapper basic-container">
+  <div class="tabs-clock dark" id="clickWidget">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['home']" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">query_builder</mat-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['alarm-lists']" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">alarm</mat-icon>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['settings']" routerLinkActive="active">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>
+    <app-alarm-ring [alarmObject]="alarmObject" [isAlarming]="isAlarming" (alarmDone)="alarmBellConfirm($event)"></app-alarm-ring>
+
+
+<app-footer></app-footer>

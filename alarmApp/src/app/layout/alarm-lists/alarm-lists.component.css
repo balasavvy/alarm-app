@@ -1,0 +1,13 @@
+.addAlarm {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.addAlarm mat-icon {
+  font-size: 40px;
+  color: #bfb9bb;
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+<section>
+  <div class="settings">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-6">
+            <label>Theme</label>
+          </div>
+          <div class="col-6" [formGroup]="themeForm">
+            <mat-radio-group formControlName="themeOptions" (change)="changeTheme($event)">
+              <mat-radio-button value="dark">Dark</mat-radio-button>
+              <mat-radio-button value="light">Light</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item" *ngIf='alarms'>
+        <div class="row">
+          <div class="col-6">
+            <label>Disable All</label>
+          </div>
+          <div class="col-6" [formGroup]="disableForm">
+            <mat-checkbox formControlName="disableOptions" [checked]="_Disablechecked" (change)="disableAll($event)">
+            </mat-checkbox>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<perfect-scrollbar style="max-width: 300px; max-height: 300px;">
+  <div class="row">
+    <div class="col-12">
+      <ng-container *ngFor="let alarm of alarms">
+        <div class="alarm-lists">
+          <div class="timeRow row justify-content-center align-items-center">
+            <div class="col-6">
+              <div class="dTime">
+                <span>{{alarm.hour}}:{{alarm.minute}} {{alarm.meridian}}</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="handle">
+                <mat-slide-toggle (change)="statusChange(alarm,$event)" [checked]="alarm.isActive"></mat-slide-toggle>
+              </div>
+            </div>
+          </div>
+          <div class="dayRow row">
+            <div class="col-12">
+              <ul class="list-inline m0 p0">
+                <li class="list-inline-item">
+                  {{alarm.daysLabel}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="actions">
+            <span class="edit" (click)="editAlarm(alarm)">&nbsp;<i class="far fa-edit"></i></span>
+            <span class="delete" (click)="deleteAlarm(alarm)">&nbsp;<i class="far fa-trash-alt"></i></span>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</perfect-scrollbar>

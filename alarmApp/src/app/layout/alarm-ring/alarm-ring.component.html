@@ -1,0 +1,22 @@
+<ng-template #alarmRing>
+
+  <div class="modal-body shaker">
+    <div class="row">
+      <div class="col-12">
+        <h5 class="title">TODAY'S QUOTES</h5>
+        <blockquote>
+          <p class="quotation"> {{quote}}
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="row mt15 justify-content-center">
+      <div class="col-12 text-center">
+        <button (click)=onSubmit($event) type="button" class="btn btn-primary dismiss">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">alarm_off</mat-icon>
+          Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
