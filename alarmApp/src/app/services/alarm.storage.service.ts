@@ -28,8 +28,6 @@ export class AlarmStoresService {
        });
        this.storage.set("alarm-app",[...getAlarm])
     }
-    
-  
   }
    get alarm(){
     return this.storage.get("alarm-app"); 

@@ -8,7 +8,6 @@ import { map } from 'rxjs/operators';
 export class DigiclockService {
   private _clock: Observable < Date > ;
   constructor() {
-    console.log(this._clock)
   }
   get clock(): Observable < Date > {
     return this._clock;

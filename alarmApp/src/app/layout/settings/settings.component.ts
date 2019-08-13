@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AlarmStoresService } from 'src/app/services/alarm.storage.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import * as $ from 'jquery';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -15,7 +16,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
   themeForm: FormGroup;
   disableForm: FormGroup;
   alarms: any;
-  constructor(private alarmStorage: AlarmStoresService, private formBuilder: FormBuilder) {
+  constructor(private toastr: ToastrService,private alarmStorage: AlarmStoresService, private formBuilder: FormBuilder) {
     this.alarmStorage.someProp.subscribe(res => {
       this.alarms = this.alarmStorage.alarm.length;
       let getSettings = this.alarmStorage.settings;
@@ -52,6 +53,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     if (event.checked) {
       this.alarmStorage.deactivateAll();
       this._disableAll = true;
+      this.toastr.success('All Alarms are disabled!');
     } else {
       this._disableAll = false;
     }

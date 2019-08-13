@@ -3,6 +3,7 @@ import { Alarm } from 'src/app/models/alarm.models';
 import { Observable } from 'rxjs';
 import { SetAlarmComponent } from './set-alarm/set-alarm.component';
 import { AlarmStoresService } from 'src/app/services/alarm.storage.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-alarm-lists',
   templateUrl: './alarm-lists.component.html',
@@ -24,7 +25,7 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
   _isEdit: boolean;
   _isDelete: boolean;
 
-  constructor(private alarmStorage: AlarmStoresService) {}
+  constructor(private toastr: ToastrService,private alarmStorage: AlarmStoresService) {}
 
   ngOnInit() {
     this.noAlarmLists = true;
@@ -44,8 +45,9 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
           }
         })
         this.alarmListings = [...getAlarms];
-        console.log(this.alarmListings);
 
+      }else{
+        this._isAlarmLists = false;
       }
     })
 
@@ -61,13 +63,14 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
   }
 
   renderLists(dataEvent) {
+    this._alaraArray=[];
     if (dataEvent.type == 'add') {
       let hours = dataEvent.value.getHours() > 12 ? dataEvent.value.getHours() - 12 : dataEvent.value.getHours();
       hours = hours < 10 ? "0" + hours : hours;
       const alarm = new Alarm();
       alarm.hour = +hours;
       let minutes = dataEvent.value.getMinutes() < 10 ? "0" + dataEvent.value.getMinutes() : dataEvent.value.getMinutes();
-      alarm.minute = minutes;
+      alarm.minute = +minutes;
       alarm.days = dataEvent.RepeatArray;
       alarm.daysLabel = dataEvent.daysLabel;
       alarm.repeatMode = dataEvent.repeatMode;
@@ -94,6 +97,7 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
       if (alarm) {
         this.noAlarmLists = false;
         this._isAlarmLists = true;
+        this.toastr.success('Alarm Added Successfuly');
       }
     } else {
       this.updateAlarmHandler(dataEvent)
@@ -101,11 +105,9 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
 
   }
   updateAlarmHandler(dataEvent: any) {
-    console.log(this.alarmListings);
     let editRow = this.alarmListings.filter(function (ele) {
       return ele.id == dataEvent.dataValue.id
     });
-    console.log(editRow);
     this.alarmListings.forEach((obj, i) => {
       if (obj.id == editRow[0].id) {
         let hours = dataEvent.value.getHours() > 12 ? dataEvent.value.getHours() - 12 : dataEvent.value.getHours();
@@ -120,15 +122,14 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
         obj.meridian = (dataEvent.value.getHours() >= 12) ? "PM" : "AM";
         obj.isValidTime = true;
         obj.dateValue = dataEvent.value;
-        console.log(obj);
       }
     });
     this.alarmStorage.alarm = this.alarmListings;
     this.alarmStorage.someProp.next('some value1');
+    this.toastr.success('Alarm Updated Successfuly');
   }
   _editAlarm(data) {
     if (data) {
-      console.log(data);
       this._isEdit = true;
       this.setAlarmComponent.showModal(data);
     }
@@ -164,5 +165,8 @@ export class AlarmListsComponent implements OnInit, AfterContentInit {
     this.alarmListings = [...except];
     this.alarmStorage.alarm = this.alarmListings;
     this.alarmStorage.someProp.next('some value1');
+    if(!this.alarmStorage.alarm.length){
+      this._isAlarmLists  =false
+    }
   }
 }

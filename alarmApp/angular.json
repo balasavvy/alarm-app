@@ -27,7 +27,8 @@
               "src/assets/fonts/fontAwesome/css/all.min.css",
               "src/assets/fonts/fontAwesome/css/fontawesome.min.css",
               "src/assets/fonts/fontAwesome/css/brands.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css" 
             ],
             "scripts":  [
               "node_modules/jquery/dist/jquery.min.js",

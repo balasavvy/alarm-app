@@ -92,12 +92,7 @@ export class SetAlarmComponent implements OnInit {
       })
       this.daysLabel = dayObj.toString()
     }
-    console.log(this.repeatModeObject);
-    let timeobj = dateValue.toLocaleString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true
-    });
+    
     this.setAlarmModal.hide();
     let alarmType = this._isEdit ? "edit" : "add";
     let dataEmit = {
@@ -117,7 +112,6 @@ export class SetAlarmComponent implements OnInit {
     return $day[0].day
   }
   repeatMode(event) {
-    console.log(event);
     let status = event.checked;
 
     if (status) {

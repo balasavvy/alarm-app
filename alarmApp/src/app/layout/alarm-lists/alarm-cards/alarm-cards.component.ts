@@ -61,11 +61,9 @@ export class AlarmCardsComponent implements OnInit {
   ];
  
   editAlarm(alarm) {
-    console.log("editCard");
     this._editAlarm.emit(alarm)
   }
   deleteAlarm(alarm) {
-    console.log("delete");
     this._deleteAlarm.emit(alarm)
   }
   statusChange(alarm, event) {

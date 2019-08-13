@@ -6,7 +6,7 @@
           <div class="timeRow row justify-content-center align-items-center">
             <div class="col-6">
               <div class="dTime">
-                <span>{{alarm.hour}}:{{alarm.minute}} {{alarm.meridian}}</span>
+                <span>{{alarm.hour | doubleDigit }}:{{alarm.minute | doubleDigit}} {{alarm.meridian}}</span>
               </div>
             </div>
             <div class="col-6">

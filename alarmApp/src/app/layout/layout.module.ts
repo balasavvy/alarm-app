@@ -25,11 +25,15 @@ import { AlarmRingComponent } from './alarm-ring/alarm-ring.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SettingsComponent } from './settings/settings.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { ToastrModule } from 'ngx-toastr';
+import { DoubleDigitPipe } from '../pipe/double-digit.pipe';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
 @NgModule({
-  declarations: [LayoutComponent,HeaderComponent, FooterComponent, HomeComponent, DigiClockComponent, AlarmListsComponent, SetAlarmComponent, AlarmCardsComponent, AlarmRingComponent, SettingsComponent],
+  declarations: [LayoutComponent,HeaderComponent, FooterComponent, HomeComponent, DigiClockComponent, 
+    AlarmListsComponent, SetAlarmComponent, AlarmCardsComponent, AlarmRingComponent, 
+    SettingsComponent,DoubleDigitPipe],
   imports: [
     CommonModule,
     BrowserModule,
@@ -46,7 +50,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     TimepickerModule.forRoot(),
     PerfectScrollbarModule,
     AccordionModule.forRoot(),
-    MatRadioModule
+    MatRadioModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   exports: [
     LayoutComponent

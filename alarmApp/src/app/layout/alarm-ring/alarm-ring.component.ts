@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Constants } from 'src/app/constants/Constants';
 import * as moment from 'moment';
 import { AlarmStoresService } from 'src/app/services/alarm.storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-alarm-ring',
@@ -23,7 +24,7 @@ export class AlarmRingComponent implements OnInit, OnChanges {
   quote: any;
   @Input() now: Date;
   @Input("alarmObject") alarmObject;
-  constructor(private cdRef: ChangeDetectorRef, private httpClient: HttpClient,
+  constructor(private toastr: ToastrService,private cdRef: ChangeDetectorRef, private httpClient: HttpClient,
     private modalService: BsModalService, private storage: AlarmStoresService, private constants: Constants, ) {}
   private BASE_URL: string = this.constants.quotesAPIUrl;
   currentTime: string = moment().format('HH:MM');
@@ -66,6 +67,7 @@ export class AlarmRingComponent implements OnInit, OnChanges {
       }
       this.alarmDone.emit(obj);
       this.storage.someProp.next('some value1');
+      this.toastr.warning('Alarm Stopped!');
     }
   }
 }
